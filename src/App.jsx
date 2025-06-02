@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 import JSConfetti from "js-confetti";
 import Fuse from "fuse.js";
-import "./App.module.scss";
+import styles from "./App.module.scss";
 import ProductForm from "./components/ProductForm";
 import FilterSection from "./components/FilterSection";
 import ProductTable from "./components/ProductTable";
@@ -99,8 +99,8 @@ function App() {
   });
 
   return (
-    <>
-      <div className="h1 text-center mt-3 fw-bold">Alınacaklar Listesi</div>
+    <div className={styles.appContainer}>
+      <div className="h1 text-center pt-3 fw-bold">Alınacaklar Listesi</div>
       
       <ProductForm 
         shops={shops} 
@@ -128,7 +128,7 @@ function App() {
         onMarkBought={handleMarkBought} 
         onDeleteProduct={handleDeleteProduct} 
       />
-    </>
+    </div>
   );
 }
 
